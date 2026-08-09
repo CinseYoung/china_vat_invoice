@@ -10,3 +10,8 @@ app_license = "mit"
 doctype_js = {
 	"Sales Invoice": "public/js/sales_invoice_fapiao.js",
 }
+
+# 安装/升级时自动创建依赖项(Custom Field + 打印格式)
+# 不这样做的话,换环境部署后 cn_bank_info 字段缺失 -> 发票打不出来
+after_install = "china_vat_invoice.install.after_install"
+after_migrate = "china_vat_invoice.install.after_migrate"
